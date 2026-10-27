@@ -1,0 +1,278 @@
+/* IELTS Study Tracker, dark theme.
+   Palette: neutral blue-grey surfaces, one indigo accent, skill colours come from the Skill enum. */
+
+.root {
+    -bg: #0E1117;
+    -surface: #151A23;
+    -surface-2: #1B2230;
+    -surface-3: #232C3D;
+    -border: #262E3D;
+    -text: #E6EAF2;
+    -muted: #8A94A8;
+    -accent: #7C8CFF;
+    -accent-dark: #5B6BE0;
+    -success: #4FD1A5;
+    -warn: #F6AD55;
+    -danger: #F56565;
+
+    -fx-base: #1B2230;
+    -fx-background: #0E1117;
+    -fx-control-inner-background: #121722;
+    -fx-control-inner-background-alt: #151B27;
+    -fx-accent: #7C8CFF;
+    -fx-focus-color: #7C8CFF;
+    -fx-faint-focus-color: #7C8CFF33;
+    -fx-text-base-color: #E6EAF2;
+    -fx-text-background-color: #E6EAF2;
+    -fx-text-inner-color: #E6EAF2;
+    -fx-selection-bar: #2C3750;
+    -fx-selection-bar-text: #FFFFFF;
+    -fx-font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+.app-root { -fx-background-color: -bg; }
+
+/* ---- typography ---- */
+.page-title { -fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.card-title { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.eyebrow { -fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: -muted; -fx-letter-spacing: 1px; }
+.muted { -fx-text-fill: -muted; }
+.muted-small { -fx-text-fill: -muted; -fx-font-size: 11.5px; }
+.form-label { -fx-text-fill: -muted; -fx-font-size: 12.5px; }
+.detail-value { -fx-text-fill: -text; }
+.error-text { -fx-text-fill: -danger; }
+.section-label { -fx-text-fill: -muted; -fx-font-size: 11px; -fx-font-weight: bold; -fx-padding: 6 0 0 0; }
+.section-warn { -fx-text-fill: -warn; -fx-font-size: 12px; -fx-font-weight: bold; }
+.big-number { -fx-font-size: 34px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.row-title { -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.row-title.done { -fx-text-fill: -muted; -fx-strikethrough: true; }
+.row-title-small { -fx-text-fill: -text; }
+.row-time { -fx-text-fill: -muted; -fx-font-size: 12px; }
+.day-number { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.logo { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -accent; -fx-letter-spacing: 2px; }
+.logo-sub { -fx-font-size: 12px; -fx-text-fill: -muted; }
+
+/* ---- layout ---- */
+.page { -fx-padding: 28 32 32 32; -fx-background-color: -bg; }
+.page-scroll { -fx-background-color: -bg; -fx-background: -bg; -fx-padding: 0; }
+.page-scroll > .viewport { -fx-background-color: -bg; }
+
+.card {
+    -fx-background-color: -surface;
+    -fx-background-radius: 14;
+    -fx-border-color: -border;
+    -fx-border-radius: 14;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 12, 0.1, 0, 3);
+}
+.empty { -fx-background-color: transparent; }
+.empty-title { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: -text; }
+
+.stat {
+    -fx-background-color: -surface-2;
+    -fx-background-radius: 10;
+    -fx-padding: 10 14 10 14;
+}
+.stat-value { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.stat-caption { -fx-font-size: 11px; -fx-text-fill: -muted; }
+
+.row {
+    -fx-background-color: -surface-2;
+    -fx-background-radius: 10;
+    -fx-padding: 10 12 10 14;
+}
+.row:hover { -fx-background-color: -surface-3; }
+
+/* ---- sidebar ---- */
+.sidebar { -fx-background-color: #0A0D13; -fx-border-color: -border; -fx-border-width: 0 1 0 0; -fx-padding: 24 14 18 14; }
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -muted;
+    -fx-font-size: 13.5px;
+    -fx-padding: 10 12 10 14;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.nav-button:hover { -fx-background-color: -surface-2; -fx-text-fill: -text; }
+.nav-button.nav-active {
+    -fx-background-color: -surface-3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: -accent;
+    -fx-border-width: 0 0 0 3;
+    -fx-border-radius: 8;
+}
+
+.mini-timer { -fx-background-color: -surface-2; -fx-background-radius: 12; -fx-border-color: -border; -fx-border-radius: 12; -fx-padding: 12; }
+.mini-state { -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: -success; -fx-letter-spacing: 1px; }
+.mini-title { -fx-text-fill: -text; -fx-font-weight: bold; }
+.mini-clock { -fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: -text; }
+
+/* ---- buttons ---- */
+.button { -fx-cursor: hand; }
+.btn-primary, .btn-secondary, .btn-danger {
+    -fx-background-radius: 8;
+    -fx-padding: 8 16 8 16;
+    -fx-font-weight: bold;
+}
+.btn-primary { -fx-background-color: -accent; -fx-text-fill: #0B0E16; }
+.btn-primary:hover { -fx-background-color: #94A1FF; }
+.btn-primary:pressed { -fx-background-color: -accent-dark; }
+.btn-primary:disabled { -fx-background-color: -surface-3; -fx-text-fill: -muted; -fx-opacity: 1; }
+.btn-secondary { -fx-background-color: -surface-3; -fx-text-fill: -text; -fx-border-color: #313B50; -fx-border-radius: 8; }
+.btn-secondary:hover { -fx-background-color: #2C3750; }
+.btn-danger { -fx-background-color: rgba(245,101,101,0.14); -fx-text-fill: -danger; -fx-border-color: rgba(245,101,101,0.4); -fx-border-radius: 8; }
+.btn-danger:hover { -fx-background-color: rgba(245,101,101,0.26); }
+.btn-icon { -fx-background-color: transparent; -fx-text-fill: -muted; -fx-font-size: 16px; -fx-padding: 2 8 2 8; }
+.btn-icon:hover, .btn-icon:showing { -fx-background-color: -surface-3; -fx-text-fill: -text; -fx-background-radius: 6; }
+.btn-icon > .arrow-button { -fx-padding: 0; -fx-pref-width: 0; -fx-min-width: 0; }
+.btn-icon > .arrow-button > .arrow { -fx-padding: 0; -fx-shape: ""; }
+
+/* ---- chips, badges, status ---- */
+.chip { -fx-background-radius: 20; -fx-padding: 2 10 2 10; -fx-font-size: 11.5px; -fx-font-weight: bold; }
+.badge { -fx-background-radius: 6; -fx-padding: 3 9 3 9; -fx-font-size: 11px; -fx-font-weight: bold; }
+.badge-planned { -fx-background-color: rgba(124,140,255,0.16); -fx-text-fill: -accent; }
+.badge-done { -fx-background-color: rgba(79,209,165,0.16); -fx-text-fill: -success; }
+.badge-skipped { -fx-background-color: rgba(138,148,168,0.18); -fx-text-fill: -muted; }
+.badge-overdue { -fx-background-color: rgba(245,101,101,0.16); -fx-text-fill: -danger; }
+
+.banner {
+    -fx-background-color: rgba(246,173,85,0.12);
+    -fx-border-color: rgba(246,173,85,0.45);
+    -fx-border-radius: 10; -fx-background-radius: 10;
+    -fx-padding: 10 14 10 14;
+    -fx-text-fill: #F8CB93;
+}
+.toast {
+    -fx-background-color: #2A3350;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #3B4768; -fx-border-radius: 10;
+    -fx-padding: 12 18 12 18;
+    -fx-max-width: 460;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 16, 0.2, 0, 4);
+}
+
+/* ---- exam countdown ---- */
+.count-unit { -fx-background-color: -surface-2; -fx-background-radius: 12; -fx-padding: 12 8 10 8; }
+.count-value { -fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: -text; }
+
+/* ---- focus timer ---- */
+.timer-card { -fx-padding: 28; }
+.timer-clock { -fx-font-size: 42px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.timer-task { -fx-font-size: 19px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.timer-detail { -fx-text-fill: -muted; -fx-font-size: 13px; }
+.ring-track { -fx-fill: transparent; -fx-stroke: -surface-3; }
+.ring-arc { -fx-fill: transparent; -fx-stroke: -accent; }
+.ring-arc.ring-over { -fx-stroke: -warn; }
+.status-pill { -fx-font-size: 11px; -fx-font-weight: bold; -fx-padding: 3 12 3 12; -fx-background-radius: 20; -fx-letter-spacing: 1px; }
+.status-running { -fx-background-color: rgba(79,209,165,0.16); -fx-text-fill: -success; }
+.status-paused { -fx-background-color: rgba(246,173,85,0.16); -fx-text-fill: -warn; }
+.status-ready { -fx-background-color: rgba(138,148,168,0.18); -fx-text-fill: -muted; }
+
+/* ---- planner ---- */
+.day-tile {
+    -fx-background-color: -surface;
+    -fx-border-color: -border;
+    -fx-border-radius: 12; -fx-background-radius: 12;
+    -fx-padding: 12 6 12 6;
+}
+.day-tile:hover { -fx-background-color: -surface-2; }
+.day-tile.day-today { -fx-border-color: #4C5AB8; }
+.day-tile.day-selected { -fx-background-color: -surface-3; -fx-border-color: -accent; -fx-border-width: 2; }
+
+/* ---- progress ---- */
+.progress-bar > .track { -fx-background-color: -surface-3; -fx-background-radius: 6; -fx-background-insets: 0; }
+.progress-bar > .bar { -fx-background-radius: 6; -fx-background-insets: 0; -fx-padding: 4; }
+.progress-bar { -fx-pref-height: 8; }
+.progress-bar:indeterminate > .bar { -fx-background-color: -accent; }
+.goal-bar { -fx-accent: -success; }
+
+/* ---- inputs ---- */
+.text-field, .text-area, .combo-box-base, .date-picker, .spinner {
+    -fx-background-radius: 8;
+}
+.text-field, .text-area .content, .date-picker > .text-field { -fx-background-color: #121722; }
+.text-field, .text-area { -fx-border-color: #2B3548; -fx-border-radius: 8; }
+.text-field:focused, .text-area:focused { -fx-border-color: -accent; }
+.text-field, .text-area, .text-area .content, .date-picker > .text-field, .spinner > .text-field { -fx-prompt-text-fill: #6F7A90; }
+.combo-box-base:disabled, .spinner:disabled, .date-picker:disabled { -fx-opacity: 0.75; }
+.combo-box-base, .date-picker, .spinner { -fx-background-color: #121722; -fx-border-color: #2B3548; -fx-border-radius: 8; }
+.combo-box-popup > .list-view, .context-menu, .menu-item { -fx-background-color: #1B2230; }
+.menu-item:focused { -fx-background-color: #2C3750; }
+.menu-item .label { -fx-text-fill: -text; }
+.tooltip { -fx-background-color: #2A3350; -fx-text-fill: white; -fx-font-size: 12px; -fx-background-radius: 6; }
+
+/* ---- tables ---- */
+.table-view { -fx-background-color: -surface; -fx-border-color: -border; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0; }
+.table-view .column-header-background { -fx-background-color: -surface-2; -fx-background-radius: 10 10 0 0; }
+.table-view .column-header, .table-view .filler { -fx-background-color: transparent; -fx-border-color: transparent; }
+.table-view .column-header .label { -fx-text-fill: -muted; -fx-font-size: 11.5px; -fx-font-weight: bold; -fx-alignment: center-left; }
+.table-row-cell { -fx-background-color: transparent; -fx-border-color: transparent transparent #1D2432 transparent; -fx-cell-size: 34px; }
+.table-row-cell:odd { -fx-background-color: rgba(255,255,255,0.015); }
+.table-row-cell:hover { -fx-background-color: -surface-2; }
+.table-row-cell:selected { -fx-background-color: #2C3750; }
+.table-row-cell:selected .table-cell { -fx-text-fill: white; }
+.table-cell { -fx-text-fill: -text; -fx-alignment: center-left; -fx-padding: 0 10 0 10; }
+.table-view .placeholder .label { -fx-text-fill: -muted; }
+
+/* ---- scrollbars ---- */
+.scroll-bar { -fx-background-color: transparent; }
+.scroll-bar .thumb { -fx-background-color: #2E384D; -fx-background-radius: 6; }
+.scroll-bar .thumb:hover { -fx-background-color: #3C4863; }
+.scroll-bar .track, .scroll-bar .increment-button, .scroll-bar .decrement-button { -fx-background-color: transparent; -fx-padding: 0; }
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow { -fx-padding: 0; -fx-shape: ""; }
+.scroll-pane { -fx-background-color: transparent; }
+.scroll-pane > .corner { -fx-background-color: transparent; }
+
+/* ---- dialogs ---- */
+.dialog.dialog-pane, .dialog-pane { -fx-background-color: -surface; }
+.dialog-pane .header-panel { -fx-background-color: -surface-2; }
+.dialog-pane .header-panel .label { -fx-text-fill: -text; -fx-font-size: 15px; -fx-font-weight: bold; }
+.dialog-pane .content.label { -fx-text-fill: -text; }
+.dialog-pane > .button-bar > .container { -fx-background-color: -surface; }
+.dialog-pane .button { -fx-background-color: -surface-3; -fx-text-fill: -text; -fx-background-radius: 8; -fx-padding: 7 14 7 14; }
+.dialog-pane .button:default { -fx-background-color: -accent; -fx-text-fill: #0B0E16; -fx-font-weight: bold; }
+
+/* ---- charts ---- */
+.chart { -fx-padding: 4; }
+.chart-plot-background { -fx-background-color: transparent; }
+.chart-content { -fx-padding: 6; }
+.chart-vertical-grid-lines { -fx-stroke: transparent; }
+.chart-horizontal-grid-lines { -fx-stroke: #222A3A; }
+.chart-horizontal-zero-line, .chart-vertical-zero-line { -fx-stroke: #2E384D; }
+.axis { -fx-tick-label-fill: -muted; }
+.axis-label { -fx-text-fill: -muted; }
+.axis-tick-mark, .axis-minor-tick-mark { -fx-stroke: #2E384D; }
+.axis:top, .axis:bottom, .axis:left, .axis:right { -fx-border-color: #2E384D; }
+.chart-legend { -fx-background-color: transparent; }
+.chart-legend-item { -fx-text-fill: -muted; }
+.default-color0.chart-bar { -fx-bar-fill: #7C8CFF; }
+.default-color1.chart-bar { -fx-bar-fill: #4FD1A5; }
+.default-color0.chart-legend-item-symbol { -fx-background-color: #7C8CFF; }
+.default-color1.chart-legend-item-symbol { -fx-background-color: #4FD1A5; }
+.chart-bar { -fx-background-radius: 4 4 0 0; }
+.chart-pie-label { -fx-text-fill: -text; }
+
+/* ---- v0.3: gap cards, headline, mini windows, charts ---- */
+.headline { -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.banner-text { -fx-text-fill: #F8CB93; }
+.gap-card { -fx-background-color: -surface-2; -fx-background-radius: 12; -fx-padding: 12 14 12 14; }
+.gap-card-below { -fx-border-color: rgba(246,173,85,0.55); -fx-border-radius: 12; }
+.gap-values { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -text; }
+.gap-below { -fx-text-fill: -warn; -fx-font-weight: bold; -fx-font-size: 12px; }
+.gap-ok { -fx-text-fill: -success; -fx-font-weight: bold; -fx-font-size: 12px; }
+.segment-label { -fx-text-fill: -accent; -fx-font-size: 13.5px; -fx-font-weight: bold; }
+.mini-window { -fx-background-color: -surface; }
+.default-color0.chart-series-line { -fx-stroke: #7C8CFF; -fx-stroke-width: 2.5px; }
+.default-color1.chart-series-line { -fx-stroke: #4FD1A5; -fx-stroke-dash-array: 7 6; -fx-stroke-width: 2px; }
+.default-color0.chart-line-symbol { -fx-background-color: #7C8CFF, #0E1117; }
+.default-color1.chart-line-symbol { -fx-background-color: transparent; }
+.tab-pane > .tab-header-area > .tab-header-background { -fx-background-color: transparent; }
+.tab-pane > .tab-header-area > .headers-region > .tab { -fx-background-color: -surface-2; -fx-background-radius: 8 8 0 0; }
+.tab-pane > .tab-header-area > .headers-region > .tab:selected { -fx-background-color: -surface-3; }
+.tab .tab-label { -fx-text-fill: -muted; -fx-font-weight: bold; }
+.tab:selected .tab-label { -fx-text-fill: -text; }
+.tab-pane > .tab-content-area { -fx-background-color: transparent; }
